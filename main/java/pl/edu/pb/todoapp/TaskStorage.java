@@ -22,14 +22,10 @@ public class TaskStorage {
 
     private TaskStorage() {
         tasks = new ArrayList<>();
-        for(int i=1; i<=10; i++){
+        for(int i=1; i<=150; i++){
             Task task = new Task();
-            task.setName("Ultra ważne zadanie numer " + i);
-            if(i % 3 == 0){
-                task.setCategory(Category.STUDIES);
-            }else{
-                task.setCategory(Category.HOME);
-            }
+            task.setName("Pilne zadanie numer " + i);
+            task.setDone(i%3 == 0);
             tasks.add(task);
 
         }
@@ -42,9 +38,5 @@ public class TaskStorage {
             }
         }
         return null;
-    }
-
-    public void addTask(Task task){
-        tasks.add(task);
     }
 }
